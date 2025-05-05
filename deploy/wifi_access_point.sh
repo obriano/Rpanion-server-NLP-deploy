@@ -7,8 +7,8 @@ set -x
 
 # Create Access Point
 APNAME="WiFiAP"
-SSID="rpanion"
-KEY="rpanion123"
+SSID=$(hostname)
+KEY="password"
 
 IFNAME=wlan0
 sudo nmcli connection add type wifi ifname $IFNAME con-name $APNAME ssid $SSID

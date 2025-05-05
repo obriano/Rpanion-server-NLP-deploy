@@ -34,8 +34,8 @@ if [ -e "/proc/device-tree/compatible" ]; then
 fi
 
 ## Change hostname
-sudo raspi-config nonint do_hostname rpanion
-sudo perl -pe 's/raspberrypi/rpanion/' -i /etc/hosts
+#sudo raspi-config nonint do_hostname rpanion
+#sudo perl -pe 's/raspberrypi/rpanion/' -i /etc/hosts
 
 ./install_common_libraries.sh
 
@@ -63,6 +63,6 @@ sudo sed -i.bak -e '/^\[main\]/aauth-polkit=false' /etc/NetworkManager/NetworkMa
 ./build_rpanion.sh
 
 ## For wireguard. Must be installed last as it messes the DNS resolutions
-sudo apt install -y resolvconf
+# sudo apt install -y resolvconf
 
 sudo reboot
